@@ -32,11 +32,11 @@ const InteractiveIranMap = (props) => {
             <path
               key={index}
               id={iranState.persianName}
-              onClick={() => { props.onClick(iranState); props.onChange(iranState.id.slice(1, 3), iranState.persianName) }}
+              onClick={() => { props.onChange(iranState.id.slice(1, 3), iranState.persianName) }}
               data-tip={`${iranState.persianName}`}
               data-for={`${iranState.name}Tooltip`}
               fill={
-                props.selectedArea === iranState.name
+                props.selectedArea === iranState.persianName
                   ? props.selectedAreaColor
                   : props.defaultAreasColor
               }
@@ -53,7 +53,7 @@ const InteractiveIranMap = (props) => {
               data-tip={`${iranSea.persianName}`}
               data-for={`${iranSea.name}Tooltip`}
               fill={
-                props.selectedArea === iranSea.name
+                props.selectedArea === iranSea.persianName
                   ? props.selectedAreaColor
                   : "#00BDFF"
               }
@@ -73,7 +73,7 @@ const InteractiveIranMap = (props) => {
               data-tip={`${iranIsland.persianName}`}
               data-for={`${iranIsland.name}Tooltip`}
               fill={
-                props.selectedArea === iranIsland.name
+                props.selectedArea === iranIsland.persianName
                   ? props.selectedAreaColor
                   : props.defaultAreasColor
               }
@@ -88,7 +88,7 @@ const InteractiveIranMap = (props) => {
             textAnchor="start"
             x={`${iranState.ltrX}`}
             y={`${iranState.ltrY}`}
-            onClick={() => { props.onClick(iranState); props.onChange(iranState.id.slice(1, 3), iranState.persianName) }}
+            onClick={() => { props.onChange(iranState.id.slice(1, 3), iranState.persianName) }}
             style={{
               fontSize: 16,
               fontWeight: "bold",
@@ -171,6 +171,7 @@ InteractiveIranMap.defaultProps = {
   selectedAreaColor: "yellow",
   backgroundColor: "white",
   useTestData: false,
+  selectedArea: "تهران"
 };
 
 export default InteractiveIranMap;

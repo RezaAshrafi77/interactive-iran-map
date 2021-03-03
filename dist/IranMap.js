@@ -31,12 +31,11 @@ const InteractiveIranMap = props => {
     key: index,
     id: iranState.persianName,
     onClick: () => {
-      props.onClick(iranState);
       props.onChange(iranState.id.slice(1, 3), iranState.persianName);
     },
     "data-tip": `${iranState.persianName}`,
     "data-for": `${iranState.name}Tooltip`,
-    fill: props.selectedArea === iranState.name ? props.selectedAreaColor : props.defaultAreasColor,
+    fill: props.selectedArea === iranState.persianName ? props.selectedAreaColor : props.defaultAreasColor,
     stroke: "#9B9B9B",
     style: {
       cursor: "pointer"
@@ -48,7 +47,7 @@ const InteractiveIranMap = props => {
     onClick: () => props.onClick(iranSea),
     "data-tip": `${iranSea.persianName}`,
     "data-for": `${iranSea.name}Tooltip`,
-    fill: props.selectedArea === iranSea.name ? props.selectedAreaColor : "#00BDFF",
+    fill: props.selectedArea === iranSea.persianName ? props.selectedAreaColor : "#00BDFF",
     stroke: "#9B9B9B",
     style: {
       cursor: "pointer"
@@ -62,7 +61,7 @@ const InteractiveIranMap = props => {
     onClick: () => props.onClick(iranIsland),
     "data-tip": `${iranIsland.persianName}`,
     "data-for": `${iranIsland.name}Tooltip`,
-    fill: props.selectedArea === iranIsland.name ? props.selectedAreaColor : props.defaultAreasColor,
+    fill: props.selectedArea === iranIsland.persianName ? props.selectedAreaColor : props.defaultAreasColor,
     stroke: "#9B9B9B",
     points: iranIsland.points
   }))), iransStatesProperties.map((iranState, index) => /*#__PURE__*/React.createElement("text", {
@@ -71,7 +70,6 @@ const InteractiveIranMap = props => {
     x: `${iranState.ltrX}`,
     y: `${iranState.ltrY}`,
     onClick: () => {
-      props.onClick(iranState);
       props.onChange(iranState.id.slice(1, 3), iranState.persianName);
     },
     style: {
@@ -115,6 +113,7 @@ InteractiveIranMap.defaultProps = {
   defaultAreasColor: "#dfdfdf",
   selectedAreaColor: "yellow",
   backgroundColor: "white",
-  useTestData: false
+  useTestData: false,
+  selectedArea: "تهران"
 };
 export default InteractiveIranMap;

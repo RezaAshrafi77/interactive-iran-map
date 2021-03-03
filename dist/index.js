@@ -3,7 +3,8 @@ import React from "react";
 import IranMap from "./IranMap";
 
 const InteractiveIranMap = ({
-  onChange
+  onChange,
+  selectedArea
 }) => {
   const [state, setState] = React.useState({
     selectedArea: "tehran"
@@ -23,7 +24,7 @@ const InteractiveIranMap = ({
 
   return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(IranMap, {
     onClick: selectAreaHandler,
-    selectedArea: state.selectedArea,
+    selectedArea: selectedArea,
     useTestData: true,
     onChange: onChange
   }));

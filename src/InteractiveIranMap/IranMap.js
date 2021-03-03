@@ -13,8 +13,8 @@ const InteractiveIranMap = (props) => {
   return (
     <div
       style={{
-        height: props.height,
-        width: props.height * (1070.6 / 980),
+        height: '100%',
+        width: '100%',
         backgroundColor: props.backgroundColor,
       }}
     >
@@ -100,7 +100,7 @@ const InteractiveIranMap = (props) => {
             data-tip={`${iranState.persianName}`}
             data-for={`${iranState.name}Tooltip`}
           >
-            {iranState.persianNickName}
+            {/* {iranState.persianNickName} */}
           </text>
         ))}
 
@@ -126,16 +126,16 @@ const InteractiveIranMap = (props) => {
         ))}
       </svg>
 
-      {iransStatesProperties.map((state, index) => (
+      {/* {iransStatesProperties.map((state, index) => (
         <ReactTooltip
           key={index}
           id={`${state.name}Tooltip`}
           textColor="#000000FF"
           backgroundColor="#FFFFFFFF"
         />
-      ))}
+      ))} */}
 
-      {iransIslandsProperties.map((island, index) => (
+      {/* {iransIslandsProperties.map((island, index) => (
         <ReactTooltip
           key={index}
           id={`${island.name}Tooltip`}
@@ -151,7 +151,7 @@ const InteractiveIranMap = (props) => {
           textColor="#000000FF"
           backgroundColor="#FFFFFFFF"
         />
-      ))}
+      ))} */}
     </div>
   );
 };
@@ -167,8 +167,8 @@ InteractiveIranMap.propTypes = {
 };
 
 InteractiveIranMap.defaultProps = {
-  defaultAreasColor: "#fff",
-  selectedAreaColor: "red",
+  defaultAreasColor: "#dfdfdf",
+  selectedAreaColor: "yellow",
   backgroundColor: "white",
   useTestData: false,
 };

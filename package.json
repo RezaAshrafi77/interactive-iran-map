@@ -1,11 +1,11 @@
 {
   "name": "interactive-iran-map",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alithecodeguy/interactive-iran-map.git"
+    "url": "https://github.com/RezaAshrafi77/interactive-iran-map.git"
   },
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -29,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "export NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src/InteractiveIranMap --out-dir dist --copy-files",
+    "publish:npm": "set NODE_ENV=production && del dist && mkdir dist && npx babel src/InteractiveIranMap --out-dir dist --copy-files",
     "lint": "eslint . --ext .js"
   },
   "eslintConfig": {

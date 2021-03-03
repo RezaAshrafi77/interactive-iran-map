@@ -4,12 +4,16 @@ import IranMap from "./IranMap";
 const InteractiveIranMap = () => {
   const [state, setState] = React.useState({ selectedArea: "tehran" });
   const selectAreaHandler = (area) => {
-    setState((prevState) => ({ ...prevState, selectedArea: area.name }));
+    let id = area.id.slice(1, 3);
+    if (id < 32) {
+      setState((prevState) => ({ ...prevState, selectedArea: area.name }));
+    } else {
+      return;
+    }
   };
   return (
     <div>
       <IranMap
-        height={600}
         onClick={selectAreaHandler}
         selectedArea={state.selectedArea}
         useTestData={true}

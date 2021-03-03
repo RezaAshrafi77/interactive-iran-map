@@ -1,6 +1,5 @@
 // core libraries
 import React from "react";
-import ReactTooltip from "react-tooltip";
 import PropTypes from "prop-types"; // constants
 
 import { iransStatesProperties } from "./constants/iransStates";
@@ -31,7 +30,10 @@ const InteractiveIranMap = props => {
   }, iransStatesProperties.map((iranState, index) => /*#__PURE__*/React.createElement("path", {
     key: index,
     id: iranState.persianName,
-    onClick: () => props.onClick(iranState),
+    onClick: () => {
+      props.onClick(iranState);
+      props.onChange(iranState.id.slice(1, 3));
+    },
     "data-tip": `${iranState.persianName}`,
     "data-for": `${iranState.name}Tooltip`,
     fill: props.selectedArea === iranState.name ? props.selectedAreaColor : props.defaultAreasColor,
@@ -68,7 +70,10 @@ const InteractiveIranMap = props => {
     textAnchor: "start",
     x: `${iranState.ltrX}`,
     y: `${iranState.ltrY}`,
-    onClick: () => props.onClick(iranState),
+    onClick: () => {
+      props.onClick(iranState);
+      props.onChange(iranState.id.slice(1, 3));
+    },
     style: {
       fontSize: 16,
       fontWeight: "bold",
@@ -100,6 +105,7 @@ InteractiveIranMap.propTypes = {
   height: PropTypes.number.isRequired,
   backgroundColor: PropTypes.string,
   onClick: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
   selectedArea: PropTypes.string.isRequired,
   useTestData: PropTypes.bool,
   defaultAreasColor: PropTypes.string,

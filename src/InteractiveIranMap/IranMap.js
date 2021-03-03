@@ -32,7 +32,7 @@ const InteractiveIranMap = (props) => {
             <path
               key={index}
               id={iranState.persianName}
-              onClick={() => { props.onClick(iranState); props.onChange(iranState.id.slice(1, 3)) }}
+              onClick={() => { props.onClick(iranState); props.onChange(iranState.id.slice(1, 3), iranState.persianName) }}
               data-tip={`${iranState.persianName}`}
               data-for={`${iranState.name}Tooltip`}
               fill={
@@ -88,7 +88,7 @@ const InteractiveIranMap = (props) => {
             textAnchor="start"
             x={`${iranState.ltrX}`}
             y={`${iranState.ltrY}`}
-            onClick={() => { props.onClick(iranState); props.onChange(iranState.id.slice(1, 3)) }}
+            onClick={() => { props.onClick(iranState); props.onChange(iranState.id.slice(1, 3), iranState.persianName) }}
             style={{
               fontSize: 16,
               fontWeight: "bold",

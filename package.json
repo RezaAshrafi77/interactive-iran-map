@@ -1,6 +1,6 @@
 {
   "name": "interactive-iran-map",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "private": false,
   "license": "MIT",
   "repository": {
@@ -19,8 +19,8 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "react-scripts": "3.4.1",
     "react-tooltip": "^4.2.6"
   },
